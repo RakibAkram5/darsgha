@@ -1,11 +1,6 @@
 import '../../../core/models/user_role.dart';
 
-enum UserStatus {
-  active,
-  pending,
-  suspended,
-  deactivated,
-}
+enum UserStatus { active, pending, suspended, deactivated }
 
 class AppUser {
   final String id;

@@ -10,7 +10,8 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _opacity;
 
@@ -21,9 +22,10 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       vsync: this,
       duration: const Duration(milliseconds: 1500),
     );
-    _opacity = Tween<double>(begin: 0.0, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
-    );
+    _opacity = Tween<double>(
+      begin: 0.0,
+      end: 1.0,
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeIn));
 
     _controller.forward();
 
@@ -31,10 +33,12 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
       if (mounted) {
         Navigator.of(context).pushReplacement(
           PageRouteBuilder(
-            pageBuilder: (context, animation, secondaryAnimation) => const LoginScreen(),
-            transitionsBuilder: (context, animation, secondaryAnimation, child) {
-              return FadeTransition(opacity: animation, child: child);
-            },
+            pageBuilder: (context, animation, secondaryAnimation) =>
+                const LoginScreen(),
+            transitionsBuilder:
+                (context, animation, secondaryAnimation, child) {
+                  return FadeTransition(opacity: animation, child: child);
+                },
             transitionDuration: const Duration(milliseconds: 800),
           ),
         );
@@ -58,19 +62,26 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
           Positioned(
             top: -100,
             left: -100,
-            child: _GlowCircle(color: AppColors.electricBlue.withOpacity(0.1)),
+            child: _GlowCircle(
+              color: AppColors.electricBlue.withValues(alpha: 0.1),
+            ),
           ),
           Positioned(
             bottom: -100,
             right: -100,
-            child: _GlowCircle(color: AppColors.auroraViolet.withOpacity(0.1)),
+            child: _GlowCircle(
+              color: AppColors.auroraViolet.withValues(alpha: 0.1),
+            ),
           ),
           Positioned(
             top: MediaQuery.of(context).size.height * 0.4,
             right: -50,
-            child: _GlowCircle(color: AppColors.cyberCyan.withOpacity(0.05), size: 200),
+            child: _GlowCircle(
+              color: AppColors.cyberCyan.withValues(alpha: 0.05),
+              size: 200,
+            ),
           ),
-          
+
           Center(
             child: FadeTransition(
               opacity: _opacity,
@@ -111,11 +122,7 @@ class _GlowCircle extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         boxShadow: [
-          BoxShadow(
-            color: color,
-            blurRadius: size / 4,
-            spreadRadius: 2,
-          ),
+          BoxShadow(color: color, blurRadius: size / 4, spreadRadius: 2),
         ],
       ),
     );

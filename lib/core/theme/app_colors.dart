@@ -10,11 +10,7 @@ class AppColors {
 
   // Brand Gradient
   static const LinearGradient brandGradient = LinearGradient(
-    colors: [
-      electricBlue,
-      auroraViolet,
-      cyberCyan,
-    ],
+    colors: [electricBlue, auroraViolet, cyberCyan],
     begin: Alignment.topLeft,
     end: Alignment.bottomRight,
   );

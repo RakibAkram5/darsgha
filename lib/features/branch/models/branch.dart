@@ -1,8 +1,4 @@
-enum BranchStatus {
-  active,
-  inactive,
-  archived,
-}
+enum BranchStatus { active, inactive, archived }
 
 class Branch {
   final String id;

@@ -39,11 +39,19 @@ class AppTextStyles {
 
   // Dark Mode Text Styles
   static TextStyle darkH1 = h1.copyWith(color: AppColors.darkTextPrimary);
-  static TextStyle darkBodyLarge = bodyLarge.copyWith(color: AppColors.darkTextPrimary);
-  static TextStyle darkBodyMedium = bodyMedium.copyWith(color: AppColors.darkTextSecondary);
+  static TextStyle darkBodyLarge = bodyLarge.copyWith(
+    color: AppColors.darkTextPrimary,
+  );
+  static TextStyle darkBodyMedium = bodyMedium.copyWith(
+    color: AppColors.darkTextSecondary,
+  );
 
   // Light Mode Text Styles
   static TextStyle lightH1 = h1.copyWith(color: AppColors.lightTextPrimary);
-  static TextStyle lightBodyLarge = bodyLarge.copyWith(color: AppColors.lightTextPrimary);
-  static TextStyle lightBodyMedium = bodyMedium.copyWith(color: AppColors.lightTextSecondary);
+  static TextStyle lightBodyLarge = bodyLarge.copyWith(
+    color: AppColors.lightTextPrimary,
+  );
+  static TextStyle lightBodyMedium = bodyMedium.copyWith(
+    color: AppColors.lightTextSecondary,
+  );
 }

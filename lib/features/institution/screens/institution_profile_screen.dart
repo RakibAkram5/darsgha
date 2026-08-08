@@ -9,7 +9,8 @@ class InstitutionProfileScreen extends StatefulWidget {
   const InstitutionProfileScreen({super.key});
 
   @override
-  State<InstitutionProfileScreen> createState() => _InstitutionProfileScreenState();
+  State<InstitutionProfileScreen> createState() =>
+      _InstitutionProfileScreenState();
 }
 
 class _InstitutionProfileScreenState extends State<InstitutionProfileScreen> {
@@ -71,7 +72,11 @@ class _InstitutionProfileScreenState extends State<InstitutionProfileScreen> {
               shape: BoxShape.circle,
               border: Border.all(color: AppColors.electricBlue, width: 2),
             ),
-            child: const Icon(Icons.school, size: 60, color: AppColors.electricBlue),
+            child: const Icon(
+              Icons.school,
+              size: 60,
+              color: AppColors.electricBlue,
+            ),
           ),
           if (_isEditing)
             Positioned(
@@ -83,7 +88,11 @@ class _InstitutionProfileScreenState extends State<InstitutionProfileScreen> {
                   color: AppColors.electricBlue,
                   shape: BoxShape.circle,
                 ),
-                child: const Icon(Icons.camera_alt, size: 20, color: Colors.white),
+                child: const Icon(
+                  Icons.camera_alt,
+                  size: 20,
+                  color: Colors.white,
+                ),
               ),
             ),
         ],
@@ -196,7 +205,7 @@ class _InstitutionProfileScreenState extends State<InstitutionProfileScreen> {
         labelText: label,
         labelStyle: TextStyle(color: AppColors.darkTextSecondary),
         disabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.white.withOpacity(0.1)),
+          borderSide: BorderSide(color: Colors.white.withValues(alpha: 0.1)),
         ),
         enabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(color: AppColors.darkElevated),
@@ -226,13 +235,12 @@ class _InstitutionProfileScreenState extends State<InstitutionProfileScreen> {
           isExpanded: true,
           underline: Container(
             height: 1,
-            color: enabled ? AppColors.darkElevated : Colors.white.withOpacity(0.1),
+            color: enabled
+                ? AppColors.darkElevated
+                : Colors.white.withValues(alpha: 0.1),
           ),
           items: items.map((String value) {
-            return DropdownMenuItem<String>(
-              value: value,
-              child: Text(value),
-            );
+            return DropdownMenuItem<String>(value: value, child: Text(value));
           }).toList(),
           onChanged: enabled ? (val) {} : null,
         ),

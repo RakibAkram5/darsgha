@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.dark, // Defaulting to dark as per premium futuristic branding
+      themeMode: ThemeMode
+          .dark, // Defaulting to dark as per premium futuristic branding
       home: const SplashScreen(),
     );
   }

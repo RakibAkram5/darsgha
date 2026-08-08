@@ -1,9 +1,4 @@
-enum SessionStatus {
-  upcoming,
-  active,
-  closed,
-  archived,
-}
+enum SessionStatus { upcoming, active, closed, archived }
 
 class AcademicSession {
   final String id;

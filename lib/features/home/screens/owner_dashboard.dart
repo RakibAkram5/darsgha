@@ -15,7 +15,7 @@ class OwnerDashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final institution = MockDataService.currentInstitution;
-    
+
     return Scaffold(
       body: CustomScrollView(
         slivers: [
@@ -64,9 +64,7 @@ class OwnerDashboard extends StatelessWidget {
           ),
         ),
         background: Container(
-          decoration: const BoxDecoration(
-            gradient: AppColors.brandGradient,
-          ),
+          decoration: const BoxDecoration(gradient: AppColors.brandGradient),
           child: Stack(
             children: [
               Positioned(
@@ -75,7 +73,7 @@ class OwnerDashboard extends StatelessWidget {
                 child: Icon(
                   Icons.school_outlined,
                   size: 150,
-                  color: Colors.white.withOpacity(0.1),
+                  color: Colors.white.withValues(alpha: 0.1),
                 ),
               ),
             ],
@@ -98,10 +96,7 @@ class OwnerDashboard extends StatelessWidget {
       children: [
         const Text(
           'Good Morning, Ahmed 👋',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 4),
         Text(
@@ -118,7 +113,9 @@ class OwnerDashboard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.darkCard,
         borderRadius: AppRadius.radiusLg,
-        border: Border.all(color: AppColors.electricBlue.withOpacity(0.2)),
+        border: Border.all(
+          color: AppColors.electricBlue.withValues(alpha: 0.2),
+        ),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,7 +143,9 @@ class OwnerDashboard extends StatelessWidget {
               value: 0.75,
               minHeight: 8,
               backgroundColor: AppColors.darkElevated,
-              valueColor: const AlwaysStoppedAnimation<Color>(AppColors.cyberCyan),
+              valueColor: const AlwaysStoppedAnimation<Color>(
+                AppColors.cyberCyan,
+              ),
             ),
           ),
           const SizedBox(height: AppSpacing.md),
@@ -207,10 +206,7 @@ class OwnerDashboard extends StatelessWidget {
   Widget _buildSectionHeader(String title) {
     return Text(
       title,
-      style: const TextStyle(
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
-      ),
+      style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
     );
   }
 
@@ -226,7 +222,9 @@ class OwnerDashboard extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const InstitutionProfileScreen()),
+                MaterialPageRoute(
+                  builder: (context) => const InstitutionProfileScreen(),
+                ),
               );
             },
           ),
@@ -236,7 +234,9 @@ class OwnerDashboard extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const BranchListScreen()),
+                MaterialPageRoute(
+                  builder: (context) => const BranchListScreen(),
+                ),
               );
             },
           ),
@@ -246,7 +246,9 @@ class OwnerDashboard extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SessionListScreen()),
+                MaterialPageRoute(
+                  builder: (context) => const SessionListScreen(),
+                ),
               );
             },
           ),
@@ -315,10 +317,14 @@ class _SetupChip extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       decoration: BoxDecoration(
-        color: isDone ? AppColors.cyberCyan.withOpacity(0.1) : AppColors.darkElevated,
+        color: isDone
+            ? AppColors.cyberCyan.withValues(alpha: 0.1)
+            : AppColors.darkElevated,
         borderRadius: AppRadius.radiusSm,
         border: Border.all(
-          color: isDone ? AppColors.cyberCyan.withOpacity(0.3) : Colors.transparent,
+          color: isDone
+              ? AppColors.cyberCyan.withValues(alpha: 0.3)
+              : Colors.transparent,
         ),
       ),
       child: Row(
@@ -372,17 +378,11 @@ class _StatCard extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             value,
-            style: const TextStyle(
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
           ),
           Text(
             title,
-            style: TextStyle(
-              fontSize: 12,
-              color: AppColors.darkTextSecondary,
-            ),
+            style: TextStyle(fontSize: 12, color: AppColors.darkTextSecondary),
           ),
         ],
       ),

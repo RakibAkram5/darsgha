@@ -13,15 +13,14 @@ class BranchListScreen extends StatelessWidget {
     final branches = MockDataService.branches;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Branches'),
-      ),
+      appBar: AppBar(title: const Text('Branches')),
       body: branches.isEmpty
           ? _buildEmptyState(context)
           : ListView.separated(
               padding: const EdgeInsets.all(AppSpacing.md),
               itemCount: branches.length,
-              separatorBuilder: (context, index) => const SizedBox(height: AppSpacing.md),
+              separatorBuilder: (context, index) =>
+                  const SizedBox(height: AppSpacing.md),
               itemBuilder: (context, index) {
                 final branch = branches[index];
                 return _buildBranchCard(context, branch);
@@ -41,7 +40,7 @@ class BranchListScreen extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.darkCard,
         borderRadius: AppRadius.radiusLg,
-        border: Border.all(color: Colors.white.withOpacity(0.05)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +50,10 @@ class BranchListScreen extends StatelessWidget {
             children: [
               Text(
                 branch.name,
-                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18,
+                ),
               ),
               _buildStatusBadge(branch.status),
             ],
@@ -59,7 +61,11 @@ class BranchListScreen extends StatelessWidget {
           const SizedBox(height: AppSpacing.xs),
           Text(
             branch.code,
-            style: TextStyle(color: AppColors.cyberCyan, fontSize: 12, fontWeight: FontWeight.bold),
+            style: TextStyle(
+              color: AppColors.cyberCyan,
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           const SizedBox(height: AppSpacing.md),
           _buildInfoRow(Icons.location_on_outlined, branch.address),
@@ -71,10 +77,7 @@ class BranchListScreen extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              TextButton(
-                onPressed: () {},
-                child: const Text('Edit'),
-              ),
+              TextButton(onPressed: () {}, child: const Text('Edit')),
               const SizedBox(width: AppSpacing.sm),
               ElevatedButton(
                 onPressed: () {},
@@ -108,13 +111,17 @@ class BranchListScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: AppRadius.radiusSm,
-        border: Border.all(color: color.withOpacity(0.3)),
+        border: Border.all(color: color.withValues(alpha: 0.3)),
       ),
       child: Text(
         status.name.toUpperCase(),
-        style: TextStyle(color: color, fontSize: 10, fontWeight: FontWeight.bold),
+        style: TextStyle(
+          color: color,
+          fontSize: 10,
+          fontWeight: FontWeight.bold,
+        ),
       ),
     );
   }
@@ -141,7 +148,11 @@ class BranchListScreen extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.location_off_outlined, size: 80, color: AppColors.darkElevated),
+          Icon(
+            Icons.location_off_outlined,
+            size: 80,
+            color: AppColors.darkElevated,
+          ),
           const SizedBox(height: AppSpacing.md),
           const Text(
             'No branches added yet',

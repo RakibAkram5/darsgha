@@ -13,21 +13,12 @@ class HomeScreen extends StatelessWidget {
           children: [
             DarsghaLogo(size: 30, showText: false),
             SizedBox(width: 12),
-            Text(
-              'Darsgha',
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
+            Text('Darsgha', style: TextStyle(fontWeight: FontWeight.bold)),
           ],
         ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () {},
-          ),
-          IconButton(
-            icon: const Icon(Icons.person_outline),
-            onPressed: () {},
-          ),
+          IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+          IconButton(icon: const Icon(Icons.person_outline), onPressed: () {}),
         ],
       ),
       drawer: const Drawer(),
@@ -52,7 +43,7 @@ class HomeScreen extends StatelessWidget {
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
-              color: AppColors.auroraViolet.withOpacity(0.4),
+              color: AppColors.auroraViolet.withValues(alpha: 0.4),
               blurRadius: 12,
               offset: const Offset(0, 4),
             ),
@@ -74,17 +65,12 @@ class HomeScreen extends StatelessWidget {
       children: [
         const Text(
           'Hello, Administrator',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
         ),
         const SizedBox(height: 4),
         Text(
           'Here is what is happening today.',
-          style: TextStyle(
-            color: AppColors.darkTextSecondary,
-          ),
+          style: TextStyle(color: AppColors.darkTextSecondary),
         ),
       ],
     );
@@ -120,15 +106,9 @@ class HomeScreen extends StatelessWidget {
       children: [
         Text(
           title,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
-        TextButton(
-          onPressed: () {},
-          child: const Text('See All'),
-        ),
+        TextButton(onPressed: () {}, child: const Text('See All')),
       ],
     );
   }
@@ -145,7 +125,7 @@ class HomeScreen extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.darkCard,
             borderRadius: BorderRadius.circular(16),
-            border: Border.all(color: Colors.white.withOpacity(0.05)),
+            border: Border.all(color: Colors.white.withValues(alpha: 0.05)),
           ),
           child: Row(
             children: [
@@ -208,7 +188,7 @@ class _SummaryCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.darkCard,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: color.withOpacity(0.1)),
+        border: Border.all(color: color.withValues(alpha: 0.1)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -216,7 +196,7 @@ class _SummaryCard extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
+              color: color.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
             ),
             child: Icon(icon, color: color, size: 20),
@@ -224,18 +204,12 @@ class _SummaryCard extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             value,
-            style: const TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-            ),
+            style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 4),
           Text(
             title,
-            style: TextStyle(
-              color: AppColors.darkTextSecondary,
-              fontSize: 14,
-            ),
+            style: TextStyle(color: AppColors.darkTextSecondary, fontSize: 14),
           ),
         ],
       ),

@@ -28,7 +28,7 @@ class DarsghaLogo extends StatelessWidget {
             boxShadow: [
               if (color == null)
                 BoxShadow(
-                  color: AppColors.electricBlue.withOpacity(0.3),
+                  color: AppColors.electricBlue.withValues(alpha: 0.3),
                   blurRadius: size / 4,
                   spreadRadius: 2,
                 ),
@@ -50,9 +50,11 @@ class DarsghaLogo extends StatelessWidget {
               fontSize: size / 3,
               fontWeight: FontWeight.bold,
               letterSpacing: 1.2,
-              color: color ?? (Theme.of(context).brightness == Brightness.dark 
-                ? AppColors.darkTextPrimary 
-                : AppColors.lightTextPrimary),
+              color:
+                  color ??
+                  (Theme.of(context).brightness == Brightness.dark
+                      ? AppColors.darkTextPrimary
+                      : AppColors.lightTextPrimary),
             ),
           ),
         ],

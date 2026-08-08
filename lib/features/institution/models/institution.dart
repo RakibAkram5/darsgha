@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum InstitutionType {
-  school,
-  academy,
-  college,
-  tuitionCenter,
-  other,
-}
+enum InstitutionType { school, academy, college, tuitionCenter, other }
 
 class Institution {
   final String id;
@@ -22,7 +16,7 @@ class Institution {
   final String province;
   final String country;
   final String? postalCode;
-  
+
   // Branding
   final Color primaryColor;
   final Color secondaryColor;

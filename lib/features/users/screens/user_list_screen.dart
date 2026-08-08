@@ -17,10 +17,7 @@ class UserListScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Staff Management'),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.filter_list),
-            onPressed: () {},
-          ),
+          IconButton(icon: const Icon(Icons.filter_list), onPressed: () {}),
         ],
       ),
       body: Column(
@@ -30,7 +27,8 @@ class UserListScreen extends StatelessWidget {
             child: ListView.separated(
               padding: const EdgeInsets.all(AppSpacing.md),
               itemCount: users.length,
-              separatorBuilder: (context, index) => const SizedBox(height: AppSpacing.sm),
+              separatorBuilder: (context, index) =>
+                  const SizedBox(height: AppSpacing.sm),
               itemBuilder: (context, index) {
                 final user = users[index];
                 return _buildUserTile(user);
@@ -43,7 +41,10 @@ class UserListScreen extends StatelessWidget {
         onPressed: () {},
         backgroundColor: AppColors.electricBlue,
         icon: const Icon(Icons.person_add_alt_1, color: Colors.white),
-        label: const Text('Invite Staff', style: TextStyle(color: Colors.white)),
+        label: const Text(
+          'Invite Staff',
+          style: TextStyle(color: Colors.white),
+        ),
       ),
     );
   }
@@ -76,15 +77,24 @@ class UserListScreen extends StatelessWidget {
         leading: CircleAvatar(
           backgroundColor: AppColors.darkElevated,
           child: Text(
-            user.name[0].toUpperCase(),
-            style: const TextStyle(color: AppColors.electricBlue, fontWeight: FontWeight.bold),
+            user.name.isNotEmpty ? user.name[0].toUpperCase() : '?',
+            style: const TextStyle(
+              color: AppColors.electricBlue,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
-        title: Text(user.name, style: const TextStyle(fontWeight: FontWeight.bold)),
+        title: Text(
+          user.name,
+          style: const TextStyle(fontWeight: FontWeight.bold),
+        ),
         subtitle: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(user.role.displayName, style: const TextStyle(color: AppColors.cyberCyan, fontSize: 12)),
+            Text(
+              user.role.displayName,
+              style: const TextStyle(color: AppColors.cyberCyan, fontSize: 12),
+            ),
             Text(user.email, style: const TextStyle(fontSize: 12)),
           ],
         ),
@@ -119,7 +129,7 @@ class UserListScreen extends StatelessWidget {
         color: color,
         shape: BoxShape.circle,
         boxShadow: [
-          BoxShadow(color: color.withOpacity(0.5), blurRadius: 4),
+          BoxShadow(color: color.withValues(alpha: 0.5), blurRadius: 4),
         ],
       ),
     );
