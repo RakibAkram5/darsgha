@@ -1,17 +1,27 @@
-# darsgha
+# Darsgha
 
-A new Flutter project.
+Premium futuristic education technology platform for schools and academies.
 
-## Getting Started
+## Project Progress
 
-This project is a starting point for a Flutter application.
+### Phase 1: Foundation & Branding ✅
+- Core Theme & Design System
+- Authentication Screens (Splash, Login)
+- Logo Integration (Darsgha Branding)
 
-A few resources to get you started if this is your first Flutter project:
+### Phase 2: Institution Management & SaaS Administration ✅
+- Institution Profile & Branding
+- Multi-Branch/Campus Management
+- Academic Session Management
+- Department Management
+- User Management (Staff Invitations)
+- Owner Dashboard with Setup Progress
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Tech Stack
+- **Frontend**: Flutter
+- **State Management**: (Future implementation: Provider/Riverpod)
+- **Database**: PostgreSQL (Backend)
+- **ORM**: Prisma (Backend)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Documentation
+- [Institution Management](INSTITUTION_MANAGEMENT.md)
